@@ -29,8 +29,6 @@ var has_conflict = function (columns) {
 }
 
 var place_next_queen = function (total, queens, columns) {
-  console.log(total,'total');
-  console.log(queens,'queens');
   console.log(columns,'columns');
   if (queens === 0) return columns
   columns = columns || []
