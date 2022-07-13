@@ -6,16 +6,16 @@
 
 var queen = 0
 
-var print_board = function (columns) {
+var print_answer = function (columns) {
   for (let i = 0; i < columns.length; i++) {
     for (let j = 0; j < columns.length; j++) {
-      process.stdout.write(columns[i] === j ? "Q " : "# ");
+      process.stdout.write(columns[i] === j ? "Q " : ". ");
     }
     process.stdout.write("\n");
   }
 };
 
-var has_conflict = function (columns) {
+var check = function (columns) {
   var len = columns.length, last = columns[len - 1], previous = len - 2
 
   while (previous >= 0) {
@@ -36,7 +36,7 @@ var place_next_queen = function (total, queens, columns) {
   for (var column = 0; column < total; column++) {
     columns.push(column)
     queen++
-    if (!has_conflict(columns) &&
+    if (!check(columns) &&
         place_next_queen(total, queens - 1, columns)) {
       return columns
     }
@@ -46,5 +46,12 @@ var place_next_queen = function (total, queens, columns) {
   return null
 }
 
-print_board(place_next_queen(4, 4))
+print_answer(place_next_queen(4, 4))
 console.log('\nqueen: ', queen)
+
+// answer:
+// [ 1, 3, 0, 2 ] columns
+// # Q # # 
+// # # # Q 
+// Q # # # 
+// # # Q # 
