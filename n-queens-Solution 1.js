@@ -51,7 +51,7 @@ console.log('\nqueen: ', queen)
 
 // answer:
 // [ 1, 3, 0, 2 ] columns
-// # Q # # 
-// # # # Q 
-// Q # # # 
-// # # Q # 
+// . Q . . 
+// . . . Q 
+// Q . . . 
+// . . Q .

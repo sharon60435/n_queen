@@ -69,3 +69,8 @@ function solveNQ()
 
 	solveNQ();
 
+// answer:
+// . . Q . 
+// Q . . . 
+// . . . Q 
+// . Q . . 
